@@ -1,0 +1,147 @@
+{% extends "core/base.html" %}
+{% block title %}Blog detalle{% endblock %}
+{% block content %}
+
+<div class="width1200 bottom60">
+
+<span class="fonth3 inline-block top30">{{ object.name }}</span><br>
+<span class="fonth5">{{ object.rut }}</span><br>
+<span class="font20"><span class="bold">Administrador: </span>{{ object.admin.first_name }} {{ object.admin.last_name }}</span>
+
+<div class="show top10">
+
+<div>
+
+{% if condominio.tareas.all %}
+<fieldset class="margintop10">
+    <legend>Tareas</legend>
+
+
+	{% for tarea in condominio.tareas.all %}
+		<div>
+	      {% if tarea.estado == "P" %}
+	      <input type="checkbox" id="{{ tarea.name }}" name="{{ tarea.name }}">
+	      {% else %}
+	      <input type="checkbox" id="{{ tarea.name }}" name="{{ tarea.name }}" checked>
+	      {% endif %}
+
+	      <label for="{{ tarea.name }}">{{ tarea.name }}</label>
+	    </div>
+	{% endfor %}
+
+</fieldset>
+{% endif %}
+<br>
+
+
+</div>
+<div>
+
+
+{% if condominio.acta_set.all %}
+<span class="fonth6 bold inline-block marginbottom10">Libro de Actas</span>
+<table class="miniTable width1200 marginbottom30">
+  <thead>
+    <tr>
+      <th>Tipo</th>
+      <th>Fecha</th>
+      <th>Comentarios</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for acta in condominio.acta_set.all %}
+	<tr>
+      <td>{{ acta.tipo }}</td>
+      <td>{{ acta.fecha }}</td>
+      <td>{{ acta.comentarios }}</td>
+    </tr>
+	{% endfor %}
+  </tbody>
+</table>
+{% endif %}
+
+
+{% if condominio.administrador_set.all %}
+<span class="fonth6 bold inline-block marginbottom10">Administradores</span>
+<table class="miniTable width1200 marginbottom30">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>RUT</th>
+      <th>Inicio</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for administrador in condominio.administrador_set.all %}
+	<tr>
+      <td>{{ administrador.name }}</td>
+      <td>{{ administrador.rut }}</td>
+      <td>{{ administrador.inicio }}</td>
+    </tr>
+	{% endfor %}
+  </tbody>
+</table>
+{% endif %}
+
+
+
+
+{% if condominio.facultad_set.all %}
+<span class="fonth6 bold inline-block marginbottom10">Facultades Bancarias</span>
+<table class="miniTable width1200 marginbottom30">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>RUT</th>
+      <th>Inicio</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for facultad in condominio.facultad_set.all %}
+	<tr>
+      <td>{{ facultad.name }}</td>
+      <td>{{ facultad.rut }}</td>
+      <td>{{ facultad.inicio }}</td>
+    </tr>
+	{% endfor %}
+  </tbody>
+</table>
+{% endif %}
+
+
+
+
+
+{% if condominio.comite_set.all %}
+<span class="fonth6 bold inline-block marginbottom10">Comité de Administración</span>
+<table class="miniTable width1200">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>RUT</th>
+      <th>Calidad</th>
+      <th>Inicio</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for comite in condominio.comite_set.all %}
+	<tr>
+      <td>{{ comite.name }}</td>
+      <td>{{ comite.rut }}</td>
+      <td>{{ comite.calidad }}</td>
+      <td>{{ comite.inicio }}</td>
+    </tr>
+	{% endfor %}
+  </tbody>
+</table>
+{% endif %}
+
+
+
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}

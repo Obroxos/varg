@@ -1,0 +1,119 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block title %}21.442{% endblock %}
+{% block content %}
+
+
+
+
+
+	{% if user.is_authenticated %}{% else %}
+		<div class="width600 bottom60 center">
+			
+			<span class="fonth1">Soluciones Legales en <span class="bold">Puerto Varas</span></span><br>
+			
+			
+
+			<span class="top30 inline-block"><a href="https://api.whatsapp.com/send?phone=56923743786" class="btn">Comunicarme con un abogado</a></span>
+		</div>
+
+
+
+
+
+
+
+
+
+
+		<div class="grayback" class="bottom10 center middle">
+			<div class="width1200 top20 sb center">
+				<div class="bottom20"><b>👨‍⚖️ Cumplimiento</b></div>
+				<div class="bottom20"><b>🤝 Cercanía</b></div>
+				<div class="bottom20"><b>⭐ Transparencia</b></div>
+			</div>
+		</div>
+
+
+		<div class="width1200 bottom60">
+			
+			<h5>Sobre la <span class="bold">Asesoría</span></h5>
+
+
+			<div class="grid-container">
+			
+				<div class="center top30 bottom30 bordery">
+					<span class="font20 bold marginbottom10">Gestión Centralizada</span><br><span class="etiqueta1 font16">Cumplimiento</span>
+					<div class="fontgray top20">No dejamos nada al azar, cada asunto es tratado por su propio especialista.</div>
+				</div>
+			
+			<div class="center top30 bottom30 bordery">
+					<span class="font20 bold">Abogado a cargo</span><br><span class="etiqueta1 font16">Cercanía</span>
+					<div class="fontgray top20">Se generará contacto directo con un abogado a cargo del requerimiento</div>
+				</div>
+
+				
+				<div class="center top30 bottom30 bordery">
+					<span class="font20 bold">Transparencia total</span><br><span class="etiqueta1 font16">Transparencia</span>
+					<div class="fontgray top20">Visibilidad constante del estado de las gestiones en nuestra plataforma</div>
+				</div>
+
+			</div>
+
+		</div>
+
+
+
+
+
+		<div class="grayback">
+			<div class="width1200 top30 bottom60 justify">
+				
+		<h5>El estado de su causa o requerimiento en <span class="bold">línea</span></h5>
+		<ul>
+			<li>Seguimiento constante a procesos</li>
+		</ul>
+
+
+			</div>
+		</div>
+
+
+	{% endif %} 
+
+
+
+{% if user.is_authenticated %}
+
+
+
+
+<div class="width1200 bottom60">
+
+	<div class="space middle">
+		<div><h4>Dashboard</h4></div>
+		<div></div>
+	</div>
+
+	<div>
+		<p><b>Normativa</b></p>
+		<p><a href="{% url 'ley' %}">📄 Ley de Copropiedad</a></p>
+		<p><a href="{% url 'asambleas' %}">🤝 Asambleas</a></p>
+	</div>
+
+	<div>
+		<p><b>Gestión</b></p>
+		<p><a href="{% url 'condominios' %}">🏠 Mis Condominios </a></p>
+	</div>
+
+
+</div>
+
+{% else %}
+
+
+
+{% endif %} 
+
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block title %}Blog{% endblock %}
+{% block content %}
+
+<div class="width600 bottom60 top30">
+
+{% if post_list %}                    
+{% for post in post_list %}
+
+<div class="space bottom30">
+<div>
+	<a href="/blog/{{ post.pk }}/"><img src="../media/{{ post.image }}" width="200"></a>
+</div>
+<div class="left30">
+<a href="/blog/{{ post.pk }}/"><b>{{ post.title }}</b></a><br>
+<span class="font12">{{ post.author.first_name }} {{ post.author.last_name }} - {{post.created|date:"d b Y"}}</span><br>
+{{ post.content|truncatechars:150 }}
+</div>
+</div>
+{% endfor %}
+
+{% else %}
+<p>No hay Post ingresados</p>
+{% endif %} 
+
+
+
+
+
+</div>
+
+{% endblock %}

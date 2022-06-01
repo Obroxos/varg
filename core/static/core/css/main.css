@@ -1,0 +1,161 @@
+body {
+  margin: 0px;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #ffffff;
+}
+
+header {
+  height: 60px;
+  font-size:  16px;
+  color:  #212529;
+  background-color: #f0f0f0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.iheader {
+  height: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+  padding-left: 20px;
+}
+
+footer {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:  #212529;
+  background-color: #f0f0f0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.footer {
+  width:  800px;
+}
+
+
+
+.container {
+    width:  90%;
+    max-width: 800px;
+    margin: auto;
+    text-align: justify;
+    line-height: 1.5;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.extended-container {
+    width:  95%;
+    max-width: 1900px;
+    margin: auto;
+    text-align: justify;
+    line-height: 1.5;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+
+.mini-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width:  95%;
+    max-width: 400px;
+}
+
+table.customTable {
+  width: 100%;
+  background-color: #FFFFFF;
+  border-collapse: collapse;
+  border-width: 1px;
+  border-color: #006C8B;
+  border-style: solid;
+  color: #000000;
+}
+
+table.customTable td, table.customTable th {
+  border-width: 1px;
+  border-color: #ddedf7;
+  border-style: solid;
+  padding: 15px;
+  font-size: 14px;
+}
+
+table.customTable thead {
+  background-color: #ddedf7;
+}
+
+
+a:link {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #006987;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:active {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+
+.btn {
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 10px;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 16px 24px 16px 24px;
+  border-top: 1px solid #000000;
+  border-right: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  border-left: 1px solid #000000;
+}
+
+.btn:hover {
+  text-decoration:none;
+  background-color: #ddedf7;
+  cursor:pointer;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #006c8b;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}

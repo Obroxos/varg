@@ -1,0 +1,37 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block title %}Blog{% endblock %}
+
+{% block content %}
+
+
+
+
+
+
+
+<div class="width1200 bottom60">
+<h5>Condominios <span class="bold">administrados</span></h5>
+	{% if condominio_list %}
+	<div class="grid-container">
+		{% for condominio in condominio_list %}
+		<div class="center bordery">
+			<a href="/condominio/{{ condominio.pk }}/"><img src="{% static 'img/condominio.svg' %}" width="50%"></a><br>
+			<a href="/condominio/{{ condominio.pk }}/"><span class="font20"><b>{{ condominio.name }}</b></span></a><br>
+			<div class="justify font14 fontgray top20">{{ condominio.name|truncatechars:160 }}</div>
+		</div>
+		{% endfor %}
+	</div>
+	{% else %}
+		<p>No hay condominio ingresados</p>
+	{% endif %} 
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}

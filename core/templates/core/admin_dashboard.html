@@ -1,0 +1,28 @@
+{% extends "core/base.html" %}
+{% block title %}21.442{% endblock %}
+{% block content %}
+
+
+
+
+
+<div class="width1200 bottom60">
+
+	<div class="space middle">
+		<div><h3>Dashboard</h3></div>
+		<div></div>
+	</div>
+
+	<div>
+		<p><b>Normativa</b></p>
+		<p><a href="{% url 'ley' %}">🏠 Ley de Copropiedad</a></p>
+		<p><a href="{% url 'asambleas' %}">🤝 Asambleas</a></p>
+	</div>
+
+	<div>
+		<p><b>Herramientas Legales</b></p>
+		<p><a href="{% url 'plan' %}">🧑‍⚖️ Cursos</a></p>
+	</div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "core/base.html" %}
+{% block title %}Crear entrada del Blog{% endblock %}
+{% block content %}
+<div class="width600 bottom60">
+   <form action="" enctype="multipart/form-data" method="post">{% csrf_token %}
+   {{ form.as_p }}
+   <button type="submit">Publicar</button>
+   </form>
+</div>
+{% endblock %}

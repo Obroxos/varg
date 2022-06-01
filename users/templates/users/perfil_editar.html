@@ -1,0 +1,39 @@
+{% extends "core/base.html" %}
+
+{% block head_title %}Edit profile{% endblock %}
+
+{% block content %}
+  <div class="graywhiteback bordertop borderbottom">
+    <div class="font14 left bottom10 top10 width1200">
+      <div><span class="leve"> ▶ </span><a href="{% url 'landing' %}">Portada</a><span class="leve"> - </span><a href="{% url 'blog' %}">Blog</a> </div>
+    </div>
+  </div>
+
+
+  <div class="width1200 bottom60">
+
+  <h3>Mi Perfil</h3>
+
+<b>Nombre:</b> {{ user.first_name }} {{ user.last_name }}<br>
+<b>Correo electrónico:</b> {{ user.email }}
+<br><br>
+
+<form method="post">
+    {% csrf_token %}
+    <label>Correo Electrónico</label>
+    {{ form.email }}
+    {{ form.email.errors }}
+    <label>Contraseña</label>
+    {{ form.password1 }}
+    <label>Contraseña (repetir)</label>
+    {{ form.password2 }}
+    {{ form.password2.errors }}
+    <button type="submit">Modificar</button>
+  </form>
+      
+
+
+
+
+</div>
+{% endblock content %}

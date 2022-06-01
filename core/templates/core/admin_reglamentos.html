@@ -1,0 +1,81 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block title %}Blog{% endblock %}
+
+{% block content %}
+
+
+
+<div class="graywhiteback bordertop borderbottom">
+
+  <div class="space middle top10 bottom10 width1200">
+    
+    <div class="font14">
+      <div><span class="leve"> ▶ </span><a href="{% url 'landing' %}">Portada</a><span class="leve"> - </span><a href="{% url 'admin_reglamentos' %}">Reglamentos de Copropiedad</a> </div>
+    </div>
+
+    <div>
+        <span>
+          {% if user.is_authenticated %} <span><a href="{% url 'dashboard' %}">Dashboard</a></span>{% endif %}
+          {% if user.is_authenticated %}<span>|</span> <span><a href="{% url 'perfil' %}">Mi Perfil</a></span>{% endif %} 
+          {% if user.is_authenticated %}<span>|</span> <span><a href="{% url 'admin_entradas' %}">Entradas</a></span>{% endif %} 
+          {% if user.is_authenticated %}<span>|</span> <span><a href="{% url 'admin_reglamentos' %}">Reglamentos</a></span>{% endif %} 
+        </span>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="width1200 bottom60">
+
+<div class="space middle">
+<div><h3>Reglamentos de Copropiedad</h3></div>
+<div><a href="{% url 'admin_reglamentos_crear' %}" class="btn">Nuevo</a></div>
+</div>
+
+{% if reglamento_list %}    
+<div class="scroll">
+<table class="customTable width1200">
+  <thead>
+    <tr>
+      
+      <th>Fecha</th>
+      <th>Condiminio</th>
+      <th>Documento</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+              
+      {% for reglamento in reglamento_list %}
+      <tr>   
+        <td>{{reglamento.created|date:"d b Y"}}</td>
+        <td>{{ reglamento.condominio }}</td>
+        <td><a href="{{ reglamento.file.url }}">Documento</a></td>
+        <td><a href="{{ reglamento.pk }}"><b>[Editar]</b></a> <a href="{{ reglamento.pk }}/eliminar"><b>[X]</b></a></td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+
+{% else %}
+<p>No hay Reglamentos ingresados</p>
+{% endif %} 
+
+
+
+
+
+</div>
+
+{% endblock %}

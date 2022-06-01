@@ -1,0 +1,44 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block title %}Blog{% endblock %}
+{% block content %}
+
+<div class="width1200 bottom60">
+<div class="space middle">
+<div><h3>Automatizaciones</h3></div>
+<div><a href="{% url 'admin_automatizacion_crear' %}" class="btn">Nueva</a></div>
+</div>
+
+{% if automatizacion_list %}    
+<div class="scroll">
+<table class="customTable width1200">
+  <thead>
+    <tr>
+      <th>Código</th>
+      <th>Descripción</th>
+      <th>Lanzador</th>
+      <th>Efectos</th>
+      <th>Edición</th>
+    </tr>
+  </thead>
+  <tbody>
+              
+      {% for automatizacion in automatizacion_list %}
+      <tr>   
+        <td>{{ automatizacion.codigo }}</td>
+        <td>{{ automatizacion.descripcion }}</td>
+        <td>{{ automatizacion.lanzador }}</td>
+        <td>{{ automatizacion.efecto }}</td>
+        <td><a href="{{ automatizacion.pk }}"><b>[Editar]</b></a> <a href="{{ automatizacion.pk }}/eliminar"><b>[X]</b></a></td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+
+{% else %}
+<p>No hay automatizaciones ingresadas</p>
+{% endif %} 
+
+</div>
+{% endblock %}

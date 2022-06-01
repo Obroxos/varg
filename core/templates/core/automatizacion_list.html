@@ -1,0 +1,34 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block title %}Blog{% endblock %}
+
+{% block content %}
+
+<div class="width600 bottom60 top30">
+
+{% if automatizacion_list %}                    
+{% for automatizacion in automatizacion_list %}
+
+<div class="space bottom30">
+<div>
+	<a href="/automatizacion/{{ automatizacion.pk }}/"><img src="../media/{{ automatizacion.image }}" width="200"></a>
+</div>
+<div class="left30">
+<a href="/automatizacion/{{ automatizacion.pk }}/"><b>{{ automatizacion.title }}</b></a><br>
+<span class="font12">{{ automatizacion.author.first_name }} {{ automatizacion.author.last_name }} - {{automatizacion.created|date:"d b Y"}}</span><br>
+{{ automatizacion.content|truncatechars:150 }}
+</div>
+</div>
+{% endfor %}
+
+{% else %}
+<p>No hay automatizaciones ingresados</p>
+{% endif %} 
+
+
+
+
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block title %}Blog{% endblock %}
+
+{% block content %}
+
+
+
+
+
+<div class="width1200 bottom60">
+<h5>Clases <span class="bold">Grupo Admin</span></h5>
+	{% if clase_list %}
+	<div class="grid-container">
+		{% for clase in clase_list %}
+		<div class="center bordery">
+			<a href="/clase/{{ clase.pk }}/"><img src="../media/{{ clase.image }}" width="100%"></a><br>
+			<a href="/clase/{{ clase.pk }}/"><span class="font20"><b>{{ clase.title }}</b></span></a><br>
+			<div class="justify font14 fontgray top20">{{ clase.content|truncatechars:160 }}</div>
+		</div>
+		{% endfor %}
+	</div>
+	{% else %}
+		<p>No hay clase ingresados</p>
+	{% endif %} 
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}

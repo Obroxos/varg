@@ -1,0 +1,42 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block title %}Blog{% endblock %}
+{% block content %}
+
+<div class="width1200 bottom60">
+<div class="space middle">
+<div><h3>Clases</h3></div>
+<div><a href="{% url 'admin_clases_crear' %}" class="btn">Nueva</a></div>
+</div>
+
+{% if clase_list %}    
+<div class="scroll">
+<table class="customTable width1200">
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Título</th>
+      <th>Autor</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+              
+      {% for clase in clase_list %}
+      <tr>   
+        <td>{{clase.created|date:"d b Y"}}</td>
+        <td>{{ clase.title }}</td>
+        <td>{{ clase.author.first_name }} {{ clase.author.last_name }}</td>
+        <td><a href="{{ clase.pk }}"><b>[Editar]</b></a> <a href="{{ clase.pk }}/eliminar"><b>[X]</b></a></td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+
+{% else %}
+<p>No hay clases ingresadas</p>
+{% endif %} 
+
+</div>
+{% endblock %}

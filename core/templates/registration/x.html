@@ -1,0 +1,27 @@
+
+
+{% extends "core/base.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<div class="container">
+
+<div class="width300 bottom90">
+<h3>Registro</h3>
+
+
+<!--Register--> 
+    <form method="POST">
+        {% csrf_token %}   
+        {{ register_form.errors}}
+        <label>Usuario:</label>{{ register_form.username}}
+        <label>Correo Electrónico:</label>{{ register_form.email}}
+        <label>Contraseña:</label>{{ register_form.password1}}
+        <label>Contraseña (repetir):</label>{{ register_form.password2}}
+        <button class="btn btn-primary" type="submit">Registro</button>
+    </form>
+    <p class="text-center">¿Posees una cuenta?, <a href="../cuenta/login">Ingresa acá</a></p>
+
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,104 @@
+{% extends "core/base.html" %}
+{% block title %}Blog detalle{% endblock %}
+{% block content %}
+
+
+
+
+
+
+
+<div class="width900 bottom10 top30">
+<span class="fonth3 bold">{{ object.title }}</span><br>
+<span class="fonth5">{{ object.subtitle }}</span>
+</div>
+
+{% if user.groups.all.0.name == "VIP" %}
+
+
+	{% if object.video %}
+	<div class="width900 top10">
+	<iframe width="900" height="506" src="{{ object.video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div><br>
+	{% else %}
+		<div class="width900 top10 bottom30 margintop30 center avisogris">
+		<span class="fonth5 top30 inline-block bold">Contenido no cargado</span>
+		<p>El contenido se liberará el día 30 de junio de 2022</p>
+		</div><br>
+	{% endif %}
+
+
+{% else %}
+
+
+
+<div class="width900 top10 bottom30 margintop30 center avisoamarillo">
+
+<span class="fonth5 top30 inline-block bold">Contenido bloqueado</span>
+
+<p>Para poder acceder, necesita efectuar el pago del curso.</p>
+
+<span class="fonth5 marginbottom30 inline-block"><span class="bold">Valor con descuento:</span> $104.300,<br> hasta el día 26 de mayo de 2022 (Ref. $149.000)</span><br>
+<a href="{% url 'registro' %}" class="btn">Desbloquear acceso</a>
+</div>
+
+
+<br>
+
+
+
+{% endif %}
+
+
+
+<div class="width900">
+<span class="">{{ object.author.first_name }} {{ object.author.last_name }} - {{object.created|date:"d b Y"}}</span><br>
+</div>
+
+
+
+
+
+
+
+
+{% if user.groups.all.0.name == "VIP" %}
+
+
+
+<div class="width900 bottom30">
+<span class="">{{ object.content }}</span>
+</div>
+
+
+{% else %}
+
+
+
+<div class="width900 top10 bottom30 margintop30 center avisoamarillo">
+
+<span class="top10 inline-block">Contenido bloqueado</span>
+</div>
+
+
+<br>
+
+
+
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

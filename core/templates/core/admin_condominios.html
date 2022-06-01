@@ -1,0 +1,60 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block title %}Blog{% endblock %}
+
+{% block content %}
+
+
+
+
+
+
+
+<div class="width1200 bottom60">
+
+<div class="space middle">
+<div><h3>Condominios</h3></div>
+<div><a href="{% url 'admin_condominios_crear' %}" class="btn">Nuevo</a></div>
+</div>
+
+
+
+{% if condominio_list %}    
+<div class="scroll">
+<table class="customTable width1200">
+  <thead>
+    <tr>
+      
+      <th>Nombre</th>
+      <th>Rut</th>
+      <th>Comuna</th>
+      <th>Región</th>
+      <th>Editar</th>
+    </tr>
+  </thead>
+  <tbody>
+              
+      {% for condominio in condominio_list %}
+      <tr>   
+        <td>{{condominio.name}}</td>
+        <td>{{ condominio.rut }}</td>
+        <td>{{ condominio.comuna }}</td>
+        <td>{{ condominio.region }}</td>
+        <td><a href="{{ condominio.pk }}"><b>[Editar]</b></a> <a href="{{ condominio.pk }}/eliminar"><b>[X]</b></a></td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+
+{% else %}
+<p>No hay condominios ingresados</p>
+{% endif %} 
+
+
+
+
+
+</div>
+
+{% endblock %}

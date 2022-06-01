@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Varg Abogados | {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/main_base.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="{% static 'img/favicon.svg' %}">
+    <link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}">
+
+<!-- Primary Meta Tags -->
+<meta name="title" content="Administradores de Condominios">
+<meta name="description" content="Administramos las comunidades del futuro.">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.varg.cl/">
+<meta property="og:title" content="Administradores de Condominios">
+<meta property="og:description" content="Administramos las comunidades del futuro">
+<meta property="og:image" content="{% static 'img/foto.png' %}">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://www.varg.cl/">
+<meta property="twitter:title" content="Administradores de Condominios">
+<meta property="twitter:description" content="Administramos las comunidades del futuro.">
+<meta property="twitter:image" content="{% static 'img/foto.png' %}">
+
+</head>
+<body>
+<header>
+
+  {% if user.is_staff %}<div class="blackback">
+    <div class="fontwhite bottom10 top10 width1200">
+      <span><a class="fontwhite" href="{% url 'dashboard' %}">Dashboard</a></span>
+      <span>|</span> <span><a class="fontwhite" href="{% url 'admin_entradas' %}">Entradas</a></span>
+      <span>|</span> <span><a class="fontwhite" href="{% url 'admin_clases' %}">Clases</a></span>
+      <span>|</span> <span><a class="fontwhite" href="{% url 'admin_condominios' %}">Condominios</a></span>
+      <span>|</span> <span><a class="fontwhite" href="{% url 'admin_automatizaciones' %}">Automatización</a></span>
+    </div>
+  </div>{% endif %} 
+
+  {% if user.is_authenticated %}
+      <div>
+        <div class="fontwhite bottom10 top10 middle width1200 space gap90">
+          <div class="top20 bottom10"><a href="{% url 'landing' %}"><img src="{% static 'img/varglogoa.svg' %}" width="180"></a></div>
+          <div>
+            <div class="space">
+              <span class="left30"><a href="{% url 'perfil' %}">[Mi Perfil]</a></span>
+              <span class="left30"><a href="{% url 'salir' %}">Cerrar Sesión</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+          <div class="bottom10 top10 width1200">
+          <span><a href="{% url 'landing' %}">Dashboard</a></span>
+          <span>|</span> <span><a href="{% url 'ley' %}">Ley</a></span>
+          <span>|</span> <span><a href="{% url 'asambleas' %}">Asambleas</a></span>
+          <span>|</span> <span><a href="{% url 'clases' %}">Clases</a></span>
+          <span>|</span> <span><a href="{% url 'condominios' %}">Condominios</a></span>
+          <span>|</span> <span><a href="{% url 'blog' %}">Blog</a></span>
+      </div>
+    </div>
+
+
+  {% else %}
+      <div class="blueback">
+        <div class="fontwhite font18 bottom10 top10 middle width1200 space gap90">
+          <div>Abogados en Puerto Varas</div>
+            <div class="space">
+              <span class="left30 top10 bottom10"><a href="{% url 'ingreso' %}" class="btn">Acceder</a></span>
+              <span class="left30 top10 bottom10"><a href="{% url 'registro' %}" class="btn">Registro</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="space width1200 top30 bottom30 middle">
+        <span class="top10"><a href="{% url 'landing' %}"><img src="{% static 'img/varglogoa.svg' %}" width="200"><b></b></a></span>
+        <span>
+          <span><a href="{% url 'ley' %}">Prácticas</a></span>
+          <span>|</span>
+          <span><a href="{% url 'blog' %}">Actualidad</a></span>
+        </span>
+      </div>
+
+
+  {% endif %} 
+</header>
+
+
+{% block content %}{% endblock %}
+<footer class="blackback middle fontwhite top30 bottom30">
+  <div>Varg Abogados © Abo SpA</div>
+</footer>
+
+
+
+
+
+
+<div class="whatsapp">
+  <a href="https://api.whatsapp.com/send?phone=56923743786" target="_blank"><img src="{% static 'img/btn_whatsapp.png' %}" alt=""></a>
+</div>
+
+
+</body>
+</html>

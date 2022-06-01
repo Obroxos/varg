@@ -1,0 +1,277 @@
+{% extends "core/base.html" %}
+
+{% block title %}Asambleas Ordinarias & Extraordinarias{% endblock %}
+
+
+{% block content %}
+<div class="width1200">
+
+<h3>Asambleas Ordinarias & Extraordinarias</h3>
+<ul>
+<li>DC = Derechos del Condominio</li>
+<li>DA = Derechos Asistentes</li>
+<li>Sin signo de suma (+) = A lo menos</li>
+<li>Con signo de suma (+) = Más de</li>
+</ul>
+
+<br>
+
+<div class="scroll">
+<table class="customTable width1200">
+  <thead>
+    <tr>
+      <th>Instancia</th>
+      <th>Normativa</th>
+      <th>Asunto</th>
+      <th>Conforma</th>
+      <th>Acuerdo</th>
+      <th>Notario</th>
+      <th>Tabla</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Asamblea Ordinaria</td>
+      <td>Art. 15, N.1 a)</td>
+      <td>Rendición de cuentas por parte del administrador y aprobación del balance presentado.</td>
+      <td>33% DC</td>
+      <td>50% DA+</td>
+      <td>No</td>
+      <td>No</td>
+    </tr>
+
+    <tr>
+      <td>Asamblea Ordinaria</td>
+      <td>Art. 15, N.1 b)</td>
+      <td>Designación, reelección o renuncia de los miembros del comité de administración..</td>
+      <td>33% DC</td>
+      <td>50% DA+</td>
+      <td>No</td>
+      <td>No</td>
+    </tr>
+
+    <tr>
+      <td>Asamblea Ordinaria</td>
+      <td>Art. 15, N.1 c)</td>
+      <td>Designación o remoción del administrador o subadministrador.</td>
+      <td>33% DC</td>
+      <td>50% DA+</td>
+      <td>No</td>
+      <td>No</td>
+    </tr>
+
+     <tr>
+      <td>Asamblea Ordinaria</td>
+      <td>Art. 15, N.1 d)</td>
+      <td>Reporte de las actualizaciones al plan de emergencia y programación de simulacros de evacuación y/o acciones de capacitación o prevención de riesgos.</td>
+      <td>33% DC</td>
+      <td>50% DA+</td>
+      <td>No</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Asamblea Ordinaria</td>
+      <td>Art. 15, N.1 e)</td>
+      <td>Término anticipado de la póliza de seguro del condominio y/o contratación de un nuevo seguro, siempre que no implique una modificación de los riesgos cubiertos por la póliza vigente producto de la eliminación o incorporación de coberturas complementarias, tales como sismo o salida de mar.</td>
+      <td>33% DC</td>
+      <td>50% DA+</td>
+      <td>No</td>
+      <td>No</td>
+    </tr>
+  <tr>
+      <td>Asamblea Ordinaria</td>
+      <td>Art. 15, N.1 f)</td>
+      <td>Cualquier otro asunto relacionado con los intereses de los copropietarios, salvo aquellos que sean materia de sesiones extraordinarias.</td>
+      <td>33% DC</td>
+      <td>50% DA+</td>
+      <td>No</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Extraordinaria de mayoría absoluta</td>
+      <td>Art. 15, N.2 a)</td>
+      <td>Modificación del reglamento de copropiedad, salvo reconstrucción o demolición del condominio o cambio de destino de las unidades del condominio.</td>
+      <td>50% DC+</td>
+      <td>50% DC+</td>
+      <td>Si</td>
+      <td>Si</td>
+    </tr>
+
+    <tr>
+      <td>Extraordinaria de mayoría absoluta</td>
+      <td>Art. 15, N.2 b)</td>
+      <td>Remoción parcial o total de los miembros del comité de administración.</td>
+      <td>50% DC+</td>
+      <td>50% DC+</td>
+      <td>No</td>
+      <td>Si</td>
+    </tr>
+
+     <tr>
+      <td>Extraordinaria de mayoría absoluta</td>
+      <td>Art. 15, N.2 c)</td>
+      <td>Gastos o inversiones extraordinarias que excedan, en un período de doce meses, el equivalente a seis cuotas de gastos comunes ordinarios del total del condominio.</td>
+      <td>50% DC+</td>
+      <td>50% DC+</td>
+      <td>No</td>
+      <td>Si</td>
+    </tr>
+    <tr>
+      <td>Extraordinaria de mayoría absoluta</td>
+      <td>Art. 15, N.2 d)</td>
+      <td>Administración conjunta de dos o más condominios y establecimiento de subadministraciones en un mismo condominio.</td>
+      <td>50% DC+</td>
+      <td>50% DC+</td>
+      <td>No</td>
+      <td>Si</td>
+    </tr>
+
+    <tr>
+      <td>Extraordinaria de mayoría absoluta</td>
+      <td>Art. 15, N.2 e)</td>
+      <td>Programas de autofinanciamiento de los condominios, y asociaciones con terceros para estos efectos.</td>
+      <td>50% DC+</td>
+      <td>50% DC+</td>
+      <td>No</td>
+      <td>Si</td>
+    </tr>
+
+    <tr>
+      <td>Extraordinaria de mayoría absoluta</td>
+      <td>Art. 15, N.2 f)</td>
+      <td>Fijación del porcentaje de recargo sobre los gastos comunes para la formación del fondo común de reserva.</td>
+      <td>50% DC+</td>
+      <td>50% DC+</td>
+      <td>No</td>
+      <td>Si</td>
+    </tr>
+
+     <tr>
+      <td>Extraordinaria de mayoría absoluta</td>
+      <td>Art. 15, N.2 g)</td>
+      <td>Utilización de los recursos del fondo común de reserva para solventar gastos comunes ordinarios de mantención o reparación.</td>
+      <td>50% DC+</td>
+      <td>50% DC+</td>
+      <td>No</td>
+      <td>Si</td>
+    </tr>
+
+    <tr>
+      <td>Extraordinaria de mayoría reforzada</td>
+      <td>Art. 15, N.3 a)</td>
+      <td>Modificación del reglamento de copropiedad, en materias reguladas en las letras d) y f) del presente numeral.</td>
+      <td>66% DC</td>
+      <td>66% DC</td>
+      <td>Si</td>
+      <td>Si</td>
+    </tr>
+
+    <tr>
+      <td>Extraordinaria de mayoría reforzada</td>
+      <td>Art. 15, N.3 b)</td>
+      <td>Delegación de facultades al comité de administración, respecto a las materias establecidas en las letras c), d) y e) del numeral 2) del presente cuadro.</td>
+      <td>66% DC</td>
+      <td>66% DC</td>
+      <td>Si</td>
+      <td>Si</td>
+    </tr>
+
+    <tr>
+      <td>Extraordinaria de mayoría reforzada</td>
+      <td>Art. 15, N.3 c)</td>
+      <td>Enajenación, arrendamiento o cesión de tenencia de bienes de dominio común, o la constitución de gravámenes sobre ellos.</td>
+      <td>66% DC</td>
+      <td>66% DC</td>
+      <td>Si</td>
+      <td>Si</td>
+    </tr>
+
+     <tr>
+      <td>Extraordinaria de mayoría reforzada</td>
+      <td>Art. 15, N.3 d)</td>
+      <td>Reconstrucción o demolición del condominio.</td>
+      <td>66% DC</td>
+      <td>66% DC</td>
+      <td>Si</td>
+      <td>Si</td>
+    </tr>
+
+<tr>
+      <td>Extraordinaria de mayoría reforzada</td>
+      <td>Art. 15, N.3 e)</td>
+      <td>Petición a la dirección de obras municipales para que se deje sin efecto la declaración que acogió el condominio al régimen de copropiedad inmobiliaria, o su modificación.</td>
+      <td>66% DC</td>
+      <td>66% DC</td>
+      <td>Si</td>
+      <td>Si</td>
+    </tr>
+
+<tr>
+      <td>Extraordinaria de mayoría reforzada</td>
+      <td>Art. 15, N.3 f)</td>
+      <td>Cambio de destino de las unidades del condominio.</td>
+      <td>66% DC</td>
+      <td>66% DC</td>
+      <td>Si</td>
+      <td>Si</td>
+    </tr>
+
+<tr>
+      <td>Extraordinaria de mayoría reforzada</td>
+      <td>Art. 15, N.3 g)</td>
+      <td>Obras de alteración o ampliaciones del condominio o sus unidades.</td>
+      <td>66% DC</td>
+      <td>66% DC</td>
+      <td>Si</td>
+      <td>Si</td>
+    </tr>
+
+<tr>
+      <td>Extraordinaria de mayoría reforzada</td>
+      <td>Art. 15, N.3 h)</td>
+      <td>Construcciones en los bienes comunes, alteraciones y cambios de destino de dichos bienes, incluso de aquellos asignados en uso y goce exclusivo.</td>
+      <td>66% DC</td>
+      <td>66% DC</td>
+      <td>Si</td>
+      <td>Si</td>
+    </tr>
+
+<tr>
+      <td>Extraordinaria de mayoría reforzada</td>
+      <td>Art. 15, N.3 i)</td>
+      <td>Constitución de derechos de uso y goce exclusivo de bienes de dominio común a favor de uno o más copropietarios, u otras formas de aprovechamiento de los bienes comunes.</td>
+      <td>66% DC</td>
+      <td>66% DC</td>
+      <td>Si</td>
+      <td>Si</td>
+    </tr>
+
+<tr>
+      <td>Extraordinaria de mayoría reforzada</td>
+      <td>Art. 15, N.3 j)</td>
+      <td>Retribución a los miembros del comité de administración, mediante un porcentaje de descuento en el pago de los gastos comunes.</td>
+      <td>66% DC</td>
+      <td>66% DC</td>
+      <td>Si</td>
+      <td>Si</td>
+    </tr>
+
+<tr>
+      <td>Extraordinaria de mayoría reforzada</td>
+      <td>Art. 15, N.3 k)</td>
+      <td>Contratación de un nuevo seguro del condominio y que implique una modificación de los riesgos cubiertos por la póliza vigente producto de la eliminación o incorporación de coberturas complementarias, tales como sismo o salida de mar.</td>
+      <td>66% DC</td>
+      <td>66% DC</td>
+      <td>Si</td>
+      <td>Si</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+<div class="bottom60">
+</div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "core/base.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+
+
+<div class="width300 bottom90">
+    <span class="fonth5 inline-block top30 bottom10 bold">Accede a tu cuenta</span>
+    <form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    {% if form.errors %}
+    <p>El usuario o contraseña no son correctos</p>
+    {% endif %}
+    {% if next %}
+        {% if user.is_authenticated %}
+        <p>No tienes acceso a esta página.</p>
+        {% else %}
+        <p>Necesitas acceder para ver el contenido.</p>
+        {% endif %}
+    {% endif %}
+    <label>Usuario</label>
+    {{ form.username }}
+    <label>Contraseña</label>
+    {{ form.password }}
+    <button type="submit">Acceder</button>
+    <input type="hidden" name="next" value="{{ next }}" />
+    <br>
+    <a href="{% url 'password_reset' %}">¿Olvidaste tu contraseña?</a>
+    <br>
+    <a href="{% url 'registro' %}">¿No estás registrad@?</a>
+    </form>
+</div>
+{% endblock %}

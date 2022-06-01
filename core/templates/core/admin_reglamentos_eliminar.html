@@ -1,0 +1,28 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block title %}Blog{% endblock %}
+
+{% block content %}
+
+
+
+
+  <div class="graywhiteback bordertop borderbottom">
+    <div class="font14 left bottom10 top10 width1200">
+      <div><span class="leve"> ▶ </span><a href="{% url 'landing' %}">Portada</a><span class="leve"> - </span><a href="{% url 'blog' %}">Blog</a> </div>
+    </div>
+  </div>
+
+
+<div class="width300 bottom60 top30">
+
+
+<form action="" method="post">{% csrf_token %}
+<p>¿Estás seguro de que quieres borrar "{{ reglamento }}"?</p>
+<button type="submit">Sí, borrar el requerimiento</button>
+</form>
+
+
+</div>
+
+{% endblock %}

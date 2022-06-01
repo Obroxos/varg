@@ -1,0 +1,58 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block title %}Blog{% endblock %}
+
+{% block content %}
+
+
+
+
+
+
+
+<div class="width1200 bottom60">
+
+<div class="space middle">
+<div><h3>Entradas del Blog</h3></div>
+<div><a href="{% url 'admin_entradas_crear' %}" class="btn">Nueva</a></div>
+</div>
+
+
+
+{% if post_list %}    
+<div class="scroll">
+<table class="customTable width1200">
+  <thead>
+    <tr>
+      
+      <th>Fecha</th>
+      <th>Título</th>
+      <th>Autor</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+              
+      {% for post in post_list %}
+      <tr>   
+        <td>{{post.created|date:"d b Y"}}</td>
+        <td>{{ post.title }}</td>
+        <td>{{ post.author.first_name }} {{ post.author.last_name }}</td>
+        <td><a href="{{ post.pk }}"><b>[Editar]</b></a> <a href="{{ post.pk }}/eliminar"><b>[X]</b></a></td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+
+{% else %}
+<p>No hay Post ingresados</p>
+{% endif %} 
+
+
+
+
+
+</div>
+
+{% endblock %}
